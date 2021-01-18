@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    ipmi2mqtt:
+      container_name: ipmi2mqtt
+      image: ipmi2mqtt:latest
+      environment:
+        - IPMIHOST=<IP\DNS of IPMI host>
+        - IPMIUSER=<IPMI user>
+        - IPMIPASS=<IPMI password>
+        - IPMIVARIABLE1=<IPMI Variable #1>
+        - IPMIVARIABLE2=<IPMI Variable #2>
+        - IPMIGREP=<IPMI Grep field>
+        - IPMICUT=<IPMI Characters to cut>
+        - MOSQUITTOHOST=<IP\DNS of Mosquitto Host>
+        - MOSQUITTOUSER=<Mosquitto User>
+        - MOSQUITTOPASS=<Mosquitto Pass>
+        - MOSQUITTOTOPIC=<Mosquitto Topic to publish to>
+        - IPMIFILE=<File to store variable to from IPMI to push to Mosquitto>
